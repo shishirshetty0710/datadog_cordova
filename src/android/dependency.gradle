@@ -1,0 +1,7 @@
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "com.datadoghq:dd-sdk-android:1.19.0"
+}
+apply plugin: "dd-sdk-android-gradle-plugin"

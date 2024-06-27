@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.outsystems.datadog" version="1.0-OS"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Datadog</name>
+    <js-module name="datadog" src="www/datadog.js">
+        <clobbers target="datadog" />
+    </js-module>
+
+     <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Datadog">
+                <param name="android-package" value="com.outsystems.datadog.Datadog"/>
+            </feature>
+        </config-file>
+        
+        <hook type="after_plugin_install" src="hooks/android/appendBuildScript.js" />
+        <hook type="after_plugin_install" src="hooks/android/CompatibilityMabs8.js" />
+        <hook type="after_prepare" src="hooks/android/CompatibilityMabs8.js" />
+        <hook type="before_build" src="hooks/android/CompatibilityMabs8.js" />
+
+        <framework src="src/android/dependency.gradle" custom="true" type="gradleReference" />
+        
+        <source-file src="src/android/Datadog.java" target-dir="src/com/outsystems/datadog" />
+
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Datadog">
+                <param name="ios-package" value="Datadog"/>
+				<param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <preference name="UseSwiftLanguageVersion"/>
+	<dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>    
+        
+
+        <podspec>
+            <config>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="DatadogCore" spec="~> 2.13.0" />
+                <pod name="DatadogRUM" spec="~> 2.13.0" />
+                <pod name="DatadogCrashReporting" spec="~> 2.13.0" />
+            </pods>
+        </podspec>
+        
+        <source-file src="src/ios/Datadog.swift" />
+    </platform>
+</plugin>
