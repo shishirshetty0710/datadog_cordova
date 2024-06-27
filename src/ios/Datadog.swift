@@ -5,7 +5,8 @@
 //
 
 import Foundation
-import Datadog
+import UIKit
+import DatadogCore
 import DatadogCrashReporting
 
 @objc(Datadog) class DatadogCrash: CDVPlugin{
