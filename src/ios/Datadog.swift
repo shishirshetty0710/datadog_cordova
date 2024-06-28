@@ -86,7 +86,7 @@ import DatadogRUM
         wkSessionId = command.argument(at: 0) as! String
         if isInitialized {
             if self.wkSessionId.compare(" ") != .orderedSame {
-                Global.rum.removeAttribute(forKey: "wk_UniqueIDForSession")
+                //Global.rum.removeAttribute(forKey: "wk_UniqueIDForSession")
             }
             //Global.rum.addAttribute(forKey: "wk_UniqueIDForSession", value: wkSessionId)
         }
