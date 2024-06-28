@@ -70,7 +70,7 @@ import DatadogRUM
                 uiKitViewsPredicate: DefaultUIKitRUMViewsPredicate(),
                 uiKitActionsPredicate: DefaultUIKitRUMActionsPredicate(),
                 urlSessionTracking: RUM.Configuration.URLSessionTracking(),
-                trackBackgroundEvents: true,
+                trackBackgroundEvents: true
               )         
             )
            
