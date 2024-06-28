@@ -88,7 +88,7 @@ import DatadogRUM
             if self.wkSessionId.compare(" ") != .orderedSame {
                 Global.rum.removeAttribute(forKey: "wk_UniqueIDForSession")
             }
-            Global.rum.addAttribute(forKey: "wk_UniqueIDForSession", value: wkSessionId)
+            //Global.rum.addAttribute(forKey: "wk_UniqueIDForSession", value: wkSessionId)
         }
         let result = CDVPluginResult.init(status: CDVCommandStatus_OK)
         self.commandDelegate.send(result, callbackId: command.callbackId)
