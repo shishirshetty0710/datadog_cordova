@@ -117,4 +117,10 @@ import DatadogRUM
         let result = CDVPluginResult.init(status: CDVCommandStatus_OK)
         self.commandDelegate.send(result, callbackId: command.callbackId)
     }
+
+    @objc(throwCrash:)func throwCrash(command : CDVInvokedUrlCommand) {
+        // Force a crash by accessing a nil pointer
+        var array: [Int]? = nil
+        print(array!.count) // Force unwrapping a nil optional
+    }
 }
