@@ -8,6 +8,7 @@ import Foundation
 import UIKit
 import DatadogCore
 import DatadogCrashReporting
+import DatadogRUM
 
 @objc(Datadog) class DatadogCrash: CDVPlugin{
     
